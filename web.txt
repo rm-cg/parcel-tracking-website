@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel Tracking System</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #tracking-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #tracking-result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="tracking-form">
+        <h2>Parcel Tracking</h2>
+        <label for="tracking-number">Enter Tracking Number:</label>
+        <input type="text" id="tracking-number" placeholder="Enter your tracking number">
+        <button onclick="trackParcel()">Track Parcel</button>
+        <div id="tracking-result"></div>
+    </div>
+
+    <script>
+        // Add your JavaScript code here
+        function trackParcel() {
+            var trackingNumber = document.getElementById("tracking-number").value;
+            var resultContainer = document.getElementById("tracking-result");
+
+            // Simulate tracking data (replace this with actual backend integration)
+            var trackingData = {
+                status: "In Transit",
+                location: "Distribution Center",
+                estimatedDelivery: "2024-02-15"
+            };
+
+            // Display tracking result
+            resultContainer.innerHTML = `
+                <p>Status: ${trackingData.status}</p>
+                <p>Location: ${trackingData.location}</p>
+                <p>Estimated Delivery: ${trackingData.estimatedDelivery}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
